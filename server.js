@@ -1,18 +1,14 @@
-// imported framework which is "Express"
-const express = require('express')
+// server.js
 
-//declearing express to us it
-const app = express()
+const express = require('express');
+const app = express();
 
-// app is express | saying for express to get /(root) route
-app.get('/',(req,res)=>{
-    //res=response to send
-res.send('hi!')
-})
+app.get('/greetings/:christy' , (req, res) => {
+    const user = req.params.christy;
+    const greetingMessage = `Hello there, ${user}!`;
+  res.send(greetingMessage);
+});
 
-app.get 
-
-
-app.listen(3000,()=> {
-    console.log('Port 3000 sever working')
-})
+app.listen(3000, () => {
+  console.log('Listening on port 3000');
+});
